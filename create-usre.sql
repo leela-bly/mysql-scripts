@@ -38,3 +38,12 @@ CREATE USER 'nimmi'@'10.211.55.0/255.255.255.0'
 IDENTIFIED WITH 'mysql_native_password' BY 'nimmi'
 REQUIRE SSL;
 
+-- List Users with their plugins:
+SELECT USER, plugin FROM mysql.user;
+select USER, plugin , host, ssl_type FROM mysql.user;
+
+SELECT USER, plugin, host FROM mysql.user;
+
+--SQL statement shows the CREATE USER statement that creates the named user called lava_sr
+SHOW CREATE USER 'admin';
+SHOW CREATE USER 'lava_sr';
