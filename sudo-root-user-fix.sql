@@ -2,6 +2,6 @@
 
 USE mysql;
 
-UPDATE USER SET PLUGIN='' WHERE User='root';
+UPDATE USER SET PLUGIN='' WHERE user='root';
 
 FLUSH PRIVILEGES;

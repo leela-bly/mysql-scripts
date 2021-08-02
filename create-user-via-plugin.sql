@@ -8,10 +8,10 @@ INSTALL PLUGIN 'auth_ed25519';
 
 --Create Users via plugin
 
-CREATE USER 'lava_sr'@'localhost' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
+CREATE USER 'lava_sr'@'localhost' IDENTIFIED VIA ed25519 USING password('secret');
 
 -- SQL_MODE does not have NO_AUTO_CREATE_USER set, then you can also create via GRANT.CREATE
-GRANT SELECT ON *.* TO 'lava_sr'@'localhost' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
+GRANT SELECT ON *.* TO 'lava_sr'@'localhost' IDENTIFIED VIA ed25519 USING password('secret');
 
 --old version of mysql or MariaDB, the PASSWORD() function and SET PASSWORD
 --create FUNCTION
@@ -26,10 +26,10 @@ ALTER USER 'lava_sr'@'localhost' IDENTIFIED VIA ed25519 USING 'ZIgUREUg5PVgQ6Lsk
 
 
 -- List Users with their plugins:
-SELECT USER, plugin FROM mysql.user;
-select USER, plugin , host, ssl_type FROM mysql.user;
+SELECT user, plugin FROM mysql.user;
+select user, plugin , host, ssl_type FROM mysql.user;
 
-SELECT USER, plugin, host FROM mysql.user;
+SELECT user, plugin, host FROM mysql.user;
 
 --SQL statement shows the CREATE USER statement that creates the named user called lava_sr
 SHOW CREATE USER 'admin';
